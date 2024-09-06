@@ -1,0 +1,60 @@
+Microsoft Windows [Version 10.0.22631.4037]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\user\Downloads\sqlite-tools-win-x64-3460100>sqlite3 employee.db
+SQLite version 3.46.1 2024-08-13 09:16:08 (UTF-16 console I/O)
+Enter ".help" for usage hints.
+
+Create Table:
+
+sqlite> create table emp_details(emp_id integer,emp_name varchar(100),department varchar(100),salary integer);
+
+Insert into Values:
+
+sqlite> insert into emp_details(emp_id,emp_name,department,salary)values(101,'priyanka','Manager',20000);
+sqlite> insert into emp_details(emp_id,emp_name,department,salary)values(102,'devi','Sales',10000);
+sqlite> insert into emp_details(emp_id,emp_name,department,salary)values(103,'suba','Finance',20000);
+sqlite> insert into emp_details(emp_id,emp_name,department,salary)values(104,'akshaya','Marketing',8000);
+sqlite> insert into emp_details(emp_id,emp_name,department,salary)values(105,'Siva','Clerk',9000);
+
+Select:
+
+sqlite> select * from emp_details;
+
+101|priyanka|Manager|20000
+102|devi|Sales|10000
+103|suba|Finance|20000
+104|akshaya|Marketing|8000
+105|Siva|Clerk|9000
+
+Read Operation:
+
+sqlite> select emp_id,emp_name,department,salary from emp_details where salary>10000;
+
+101|priyanka|Manager|20000
+103|suba|Finance|20000
+
+Update:
+
+sqlite> update emp_details set department='HR' where emp_id=105;
+
+sqlite> select * from emp_details;
+
+101|priyanka|Manager|20000
+102|devi|Sales|10000
+103|suba|Finance|20000
+104|akshaya|Marketing|8000
+105|Siva|HR|9000
+
+Delete:
+
+sqlite> delete from emp_details where emp_id=105;
+
+sqlite> select * from emp_details;
+
+101|priyanka|Manager|20000
+102|devi|Sales|10000
+103|suba|Finance|20000
+104|akshaya|Marketing|8000
+
+sqlite>
